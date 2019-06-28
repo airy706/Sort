@@ -22,7 +22,7 @@ public class ShellSort {
     }
 
     public static void main(String[] args) {
-        int[] a={12,10,38,20,44,89,15};
+        int[] a={12,10,28,20,44,89,15};
         shellSort(a);
         for(int i=0;i<7;i++){
             System.out.print(a[i]+" ");
