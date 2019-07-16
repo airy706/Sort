@@ -49,3 +49,12 @@ Throwable:
                  RuntimeException
                  IOException受查异常，方法中需要抛出所有可能的受查异常
         Exception(String Message,Throwable Cause)
+
+泛型：类型参数<>
+泛型类：具有泛型变量 public class Pair<T>{
+}类型参数放在类名后
+泛型方法：public static<T> T get(){
+}类型参数放在修饰符后面
+虚拟机中没有泛型，只有普通的类与方法，类型擦除（Object）,强制类型转换
+
+面试总结：https://github.com/CyC2018/CS-Notes
