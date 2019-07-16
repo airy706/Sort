@@ -1,0 +1,51 @@
+子类自动继承超类的域和方法，但是子类中的方法不能直接访问超类的私有域，借助super,指示编译器调用超类方法的关键字
+若子类构造器没有显示调用父类构造器，默认使用父类无参数的构造器，父类无该构造器，报错
+方法的覆盖，由动态分派确定
+
+多态：is-a原则，子类的每个对象都是父类的对象
+    超类对象变量可以引用超类的对象，也可以引用子类的对象
+final:类不能继承，方法不能重写
+类型转换：1只能在继承层次内进行转换
+          2用instanceOf检查
+
+抽象类：继承层次高，有抽象方法必须为抽象类
+        抽象类可以有抽象方法，也可以无抽象方法
+        抽象类不可以实例化，但是抽象类变量可以引用非抽象子类对象
+
+private:该类可见
+public:
+protected:所有子类可见，子类可以访问到超类的域
+默认：本包可见
+
+只有基本类型不是对象，数组、字符串等均为对象
+Object:
+equals:两个变量的引用是否相同，数组的equals方法（长度、对应元素是否相同）.调用子类该方法时，先判断父类该方法是否为
+        true,在判断子类
+hashcode:字符串、数组类型与元素内容有关，object为对象地址，重写equals,必须重写hashcode
+tostring
+
+
+
+枚举：public enum Size{small,mid,lag};
+    toString(),Size.small.toString()
+    Size[] values=Size.values();
+    用==或者compareto方法比较元素
+
+
+反射：运行时分析类
+Class:对象.calss/getClass()
+Class方法：getFiled(name),getFileds()/method/constructors
+newInstance()  Method.invoke()
+
+内部类：可以访问外部类的数据，只有内部类可以是私有类
+普通内部类：访问外部类数据，默认的内部类构造器，外部类隐式引用，外部类作用于之外（共有内部类）：OuterClass.InnerClass inner=outerObject.new InnerClass();
+局部内部类：还可以访问局部变量（final），定义在方法中，无访问修饰符
+匿名内部类：方法中直接实例化一个类，new InnerClass(){ }；
+静态内部类：内部类加static,不需要访问外部类对象数据
+
+Throwable:
+        error
+        exception
+                 RuntimeException
+                 IOException受查异常，方法中需要抛出所有可能的受查异常
+        Exception(String Message,Throwable Cause)
