@@ -1,0 +1,34 @@
+表：A0、A1,A2.....AN-1，大小为N
+表的实现：通过可增长数组的方式
+          通过链表的方式 链表：一系列节点组成，节点不必是内存连续的，节点内容、节点next链、previous链
+
+public interface Collection<T> extends Iterable<T>{
+    int size()
+    boolean isEmpty()
+    boolean contains(T x)
+    void clear()
+    boolean add(T x)
+    boolean remove(T x)根据元素内容进行添加、删除
+    public Iterator<T> iterator(){
+        return new Iterator()
+    }
+    private class Iterator implements Iterator<T>{
+        boolean hasNext()
+        T next()
+        void remove()当前位置
+    }
+}
+Public interface List<T> extends Collection<T>{
+    T get(int index)
+    void set(int index ,T x)
+    void add(int index,T x)
+    vois remove(int index)根据元素索引进行读写
+    ListIterator
+}
+
+List两种实现类
+    ArrayList<> 通过可增长数组，ensureCapacity() trimToSize(),根据索引get和set操作常数时间、根据内容查找删除线性时间
+                添加和删除元素线性时间
+    LinkedList<> 通过双向链表， 头节点、尾结点（内容为Null），节点（内容、next,previous,构造器）
+                 寻找节点线性时间（是否可变，通过二分法），带索引的读写方法都需要线性时间、确定节点位置后的操作
+                 只需要常数时间
